@@ -1,0 +1,128 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary my-3"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  Create User
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form (ngSubmit)="onCreateUser(f)" #f="ngForm">
+        <div class="modal-body">
+          <div class="mb-3 row mt-3">
+            <label for="inputId" class="col-sm-2 col-form-label">Id</label>
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="inputId"
+                ngModel
+                name="id"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputF-name" class="col-sm-2 col-form-label"
+              >First Name</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="inputF-name"
+                ngModel
+                name="first_name"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputL-name" class="col-sm-2 col-form-label"
+              >Last Name</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="inputL-name"
+                ngModel
+                name="last_name"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputEmail" class="col-sm-2 col-form-label"
+              >Email</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                ngModel
+                name="email"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputA-url" class="col-sm-2 col-form-label"
+              >Avatar Url</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="inputA-url"
+                ngModel
+                name="avatar"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Add User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-2">
+  <div class="col" *ngFor="let item of data; index as i">
+    <a
+      title="click to edit"
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/user-edit', i]"
+    >
+      <div class="card text-center p-2">
+        <app-user-item [data]="item"></app-user-item>
+      </div>
+    </a>
+  </div>
+</div>

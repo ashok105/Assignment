@@ -1,0 +1,60 @@
+<div class="w-50 mx-auto">
+  <div class="mb-3 row mt-3">
+    <label for="inputId" class="col-sm-2 col-form-label">Id</label>
+    <div class="col-sm-10">
+      <input
+        type="number"
+        class="form-control"
+        id="inputId"
+        [(ngModel)]="user.id"
+      />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputF-name" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputF-name"
+        [(ngModel)]="user.first_name"
+      />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputL-name" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputL-name"
+        [(ngModel)]="user.last_name"
+      />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail"
+        [(ngModel)]="user.email"
+      />
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputA-url" class="col-sm-2 col-form-label">Avatar Url</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        class="form-control"
+        id="inputA-url"
+        [(ngModel)]="user.avatar"
+      />
+    </div>
+  </div>
+  <button class="btn btn-success float-end" (click)="onUpdate()">
+    Save Data
+  </button>
+</div>
